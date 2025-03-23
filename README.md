@@ -1,5 +1,5 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-*Harjoitustyö tulee olemaan* **DBMS-sovellus**.
+*Harjoitustyö tulee olemaan* **Hiekka/Hiukkassimulaattori peli**.
 
 [Laskarit](laskarit)
