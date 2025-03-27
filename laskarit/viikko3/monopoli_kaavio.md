@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     class NormaaliKatu {
         nimi
@@ -28,3 +29,4 @@ classDiagram
     Pelaaja "1" -- "1" NormaaliKatu
     Ruutu "1" -- "1" Toiminto
     Kortti "1" -- "1" Toiminto
+```

@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     participant main
     participant laitehallinto as HKLLaitehallinto
@@ -35,3 +36,4 @@ sequenceDiagram
     bussi244 -->> main: False
     deactivate bussi244
     deactivate kallen_kortti
+```
