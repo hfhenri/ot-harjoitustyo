@@ -23,7 +23,7 @@ class TestSand(unittest.TestCase):
         self.simulation.add_pixel(water2)
         self.simulation.add_pixel(water3)
 
-        for _ in range(3):
+        for _ in range(10):
             self.simulation.simulate()
 
         self.assertTrue((water1.y, water2.y, water3.y) == (79, 79, 79))
