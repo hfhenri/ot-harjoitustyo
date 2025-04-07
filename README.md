@@ -25,6 +25,6 @@ poetry run invoke test
 ### Testikattavuus
 
 ```bash
-poetry run invoke covereage-report
+poetry run invoke coverage-report
 ```
 
