@@ -2,6 +2,7 @@ import unittest
 from pixels.sand import Sand
 from simulation import Simulation
 
+
 class TestSand(unittest.TestCase):
     def setUp(self):
         self.simulation = Simulation(100, 80)
@@ -20,4 +21,5 @@ class TestSand(unittest.TestCase):
         self.simulation.add_pixel(sand2)
         self.simulation.simulate()
 
-        self.assertTrue((sand1.x, sand1.y) == (4, 79) or (sand1.x, sand1.y) == (6, 79))
+        self.assertTrue((sand1.x, sand1.y) == (4, 79)
+                        or (sand1.x, sand1.y) == (6, 79))

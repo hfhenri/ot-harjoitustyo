@@ -8,6 +8,8 @@
 
 [Changelog](dokumentaatio/changelog.md)
 
+[Arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
+
 ### Sovelluksen suorittaminen
 
 ```bash

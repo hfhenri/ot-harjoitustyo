@@ -9,30 +9,33 @@ class App:
 
         self.loop()
         self.ui.ui_loop()
-    
+
     def loop(self):
         self.simulation.simulate()
-        
+
         recent_pixel = self.ui.recent_pixel_added
         if recent_pixel is not None:
             self.ui.add_pixel_to_image(recent_pixel)
             self.simulation.add_pixel(recent_pixel)
             self.ui.recent_pixel_added = None
 
+        resize_parameters = self.ui.resize_parameters
+        if self.ui.resize_parameters is not None:
+            self.ui.resize_image(resize_parameters[0], resize_parameters[1])
+            self.simulation.resize_grid(
+                resize_parameters[0], resize_parameters[1])
+            self.ui.resize_parameters = None
+
         for pixel in self.simulation.movement_queue:
-            self.ui.move_pixel(pixel)
-        
+            self.ui.move_pixel(pixel[0], pixel[1], pixel[2])
+
         self.simulation.clear_queue()
 
         if self.simulation.moved:
             self.ui.update_display()
-        
+
         self.ui.master.after(33, self.loop)
+
 
 if __name__ == "__main__":
     app = App()
-
-
-
-
-    
