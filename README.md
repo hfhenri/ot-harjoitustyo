@@ -13,16 +13,10 @@ Peli on fysiikkapohjainen hiekkalaatikko, jossa erilaiset pikselit/hiukkaset, ku
 
 ## Asentaminen
 
-Riippuvuuksien asentaminen:
+Asenna riippuvuudet komennolla:
 
 ```bash
 poetry install
-```
-
-Aloitus toimenpiteet:
-
-```bash
-poetry run invoke build
 ```
 
 ## Toiminnot
