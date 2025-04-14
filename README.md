@@ -11,6 +11,20 @@ Peli on fysiikkapohjainen hiekkalaatikko, jossa erilaiset pikselit/hiukkaset, ku
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
 
+## Asentaminen
+
+Riippuvuuksien asentaminen:
+
+```bash
+poetry install
+```
+
+Aloitus toimenpiteet:
+
+```bash
+poetry run invoke build
+```
+
 ### Sovelluksen suorittaminen
 
 ```bash
