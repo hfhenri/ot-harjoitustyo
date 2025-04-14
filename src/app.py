@@ -1,5 +1,5 @@
-from simulation import Simulation
 from ui import Ui
+from simulation import Simulation
 
 class App:
 
@@ -15,7 +15,6 @@ class App:
 
         recent_pixel = self.ui.recent_pixel_added
         if recent_pixel is not None:
-            self.ui.add_pixel_to_image(recent_pixel)
             self.simulation.add_pixel(recent_pixel)
             self.ui.recent_pixel_added = None
 
@@ -27,14 +26,14 @@ class App:
             self.ui.resize_parameters = None
 
         for pixel in self.simulation.movement_queue:
-            self.ui.move_pixel(pixel[0], pixel[1], pixel[2])
+            self.ui.add_pixel_to_image(pixel)
 
-        self.simulation.clear_queue()
+        self.simulation.clear_queues()
 
-        if self.simulation.moved:
+        if self.simulation.changed:
             self.ui.update_display()
 
-        self.ui.master.after(33, self.loop)
+        self.ui.master.after(self.ui.sim_delay, self.loop)
 
 
 if __name__ == "__main__":

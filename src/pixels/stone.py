@@ -3,8 +3,9 @@ class Stone:
     color = "gray"
 
     def __init__(self, x, y):
+        self.updated = False
         self.x = x
         self.y = y
 
-    def step(self, *args):
+    def step(self):
         return False

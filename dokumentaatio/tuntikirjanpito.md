@@ -8,5 +8,9 @@
 | 2.4.  | 2    | lisäsin veden peliin |
 | 3.4.  | 1    | lisäsin toiminnon muuttaa pelin kokoa |
 | 7.4.  | 1    | tein lisää testejä ja lisäsin kivi pikselin |
+| 12.4. | 3    | lisäsin laava ja höyry pikselin |
+| 13.4. | 2    | lisäsin testejä ja muutin käyttöliittymää |
+| 14.4. | 1    | lisäsin puu pikselin |
 
-Tunnit kokonaisuudessaan: 11
+
+Tunnit kokonaisuudessaan: 17

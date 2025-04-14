@@ -1,9 +1,8 @@
-
 from pixels.liquid import liquid_flow_logic
 
-class Water:
-    type_id = 2
-    color = "blue"
+class Steam:
+    type_id = 4
+    color = "white"
 
     def __init__(self, x, y):
         self.updated = False
@@ -15,4 +14,4 @@ class Water:
         self.y = y
 
     def step(self, simulation):
-        return liquid_flow_logic(simulation, self)
+        return liquid_flow_logic(simulation, self, up=True)

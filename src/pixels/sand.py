@@ -6,6 +6,7 @@ class Sand:
     color = "yellow"
 
     def __init__(self, x, y):
+        self.updated = False
         self.x = x
         self.y = y
 
@@ -14,27 +15,29 @@ class Sand:
         self.y = y
 
     def step(self, simulation):
+
         if simulation.can_move(self.x, self.y + 1):
             self.move_self(self.x, self.y + 1)
-            simulation.moved = True
+            simulation.changed = True
             return True
 
         if random.choice([True, False]):
             if simulation.can_move(self.x - 1, self.y + 1):
                 self.move_self(self.x - 1, self.y + 1)
-                simulation.moved = True
+                simulation.changed = True
                 return True
             if simulation.can_move(self.x + 1, self.y + 1):
                 self.move_self(self.x + 1, self.y + 1)
-                simulation.moved = True
+                simulation.changed = True
                 return True
         else:
             if simulation.can_move(self.x + 1, self.y + 1):
                 self.move_self(self.x + 1, self.y + 1)
-                simulation.moved = True
+                simulation.changed = True
                 return True
             if simulation.can_move(self.x - 1, self.y + 1):
                 self.move_self(self.x - 1, self.y + 1)
-                simulation.moved = True
+                simulation.changed = True
                 return True
+
         return False

@@ -1,11 +1,10 @@
 from pixels.empty import Empty
 
-
 class Simulation:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.moved = False
+        self.changed = False
 
         self.grid = []
 
@@ -23,11 +22,23 @@ class Simulation:
             return isinstance(self.grid[x2][y2], Empty)
         return False
 
-    def clear_queue(self):
+    def can_move_return(self, x2, y2):
+        if 0 <= x2 < self.width and 0 <= y2 < self.height:
+            return self.grid[x2][y2]
+        return None
+
+    def clear_queues(self):
         self.movement_queue.clear()
 
     def add_pixel(self, pixel):
+        self.changed = True
         self.grid[pixel.x][pixel.y] = pixel
+        self.movement_queue.append(self.grid[pixel.x][pixel.y])
+
+    def remove_pixel(self, x, y):
+        self.changed = True
+        self.grid[x][y] = Empty(x, y)
+        self.movement_queue.append(self.grid[x][y])
 
     def get_pixel(self, x, y):
         return self.grid[x][y]
@@ -35,6 +46,9 @@ class Simulation:
     def move_pixel(self, pixel, old_x, old_y):
         self.grid[old_x][old_y] = Empty(old_x, old_y)
         self.grid[pixel.x][pixel.y] = pixel
+
+        self.movement_queue.append(self.grid[old_x][old_y])
+        self.movement_queue.append(self.grid[pixel.x][pixel.y])
 
     def resize_grid(self, width, height):
         self.movement_queue.clear()
@@ -50,11 +64,6 @@ class Simulation:
             self.grid.append(new_row)
 
     def swap_places(self, pixel1, pixel2):
-        pixel1_old_x = pixel1.x
-        pixel1_old_y = pixel1.y
-
-        pixel2_old_x = pixel2.x
-        pixel2_old_y = pixel2.y
 
         self.grid[pixel1.x][pixel1.y] = pixel2
         self.grid[pixel2.x][pixel2.y] = pixel1
@@ -62,20 +71,30 @@ class Simulation:
         pixel1.move_self(pixel2.x, pixel2.y)
         pixel2.move_self(pixel1.x, pixel1.y)
 
-        self.movement_queue.append((pixel1, pixel1_old_x, pixel1_old_y))
-        self.movement_queue.append((pixel2, pixel2_old_x, pixel2_old_y))
+        self.movement_queue.append(pixel1)
+        self.movement_queue.append(pixel2)
 
     def simulate(self):
-        self.moved = False
+
+        self.changed = True
 
         for x in range(self.width):
-            for y in range(self.height - 2, -1, -1):
+            for y in range(self.height):
+                self.grid[x][y].updated = False
+
+        for x in range(self.width):
+            for y in range(self.height):
                 cell = self.grid[x][y]
-                if isinstance(cell, Empty):
+
+                if isinstance(cell, Empty) or cell.updated:
                     continue
                 old_x, old_y = cell.x, cell.y
-                moved = cell.step(self)
 
-                if moved:
+                try:
+                    changed = cell.step(self)
+                except TypeError:
+                    changed = False
+
+                if changed:
                     self.move_pixel(cell, old_x, old_y)
-                    self.movement_queue.append((cell, old_x, old_y))
+                    cell.updated = True

@@ -9,3 +9,9 @@
 - Lisättiin vesi pikseli
 - Lisättiin kivi pikseli
 - Käyttäjä voi muuttaa simulaation kokoa
+
+## Viikko 5
+
+- Lisättiin laava, höyry ja puu pikselit
+- Käyttäjä voi muuttaa simulaation nopeutta
+- Asetukset siirrettiin erilliseen osiossa käyttöliittymässä

@@ -18,3 +18,14 @@ classDiagram
     Ui <|-- Empty
     Ui <|-- Stone
 ```
+```mermaid
+sequenceDiagram
+    Simulation->>Cell: Cell.step()
+    Simulation->>Cell: Cell.updated
+    Simulation->>Cell: Cell.step()
+    Simulation->>Cell: Cell.updated
+    Cell<<->>Simulation: Simulation.remove_pixel()
+    Cell<<->>Simulation: Simulation.add_pixel()
+    Cell<<->>Simulation: Simulation.move_pixel()
+    Cell->>Simulation: Simulation.changed
+```

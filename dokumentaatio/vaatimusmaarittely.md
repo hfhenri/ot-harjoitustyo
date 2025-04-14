@@ -16,8 +16,8 @@ Luonnos käyttöliittymästä:
 
 - Käyttajä pystyy lisäämän pikseleitä näytölle (Tehty)
 - Käyttäjä pystyy valitsemaan pikselin tyypin (Tehty)
-- Jokainen pikseli käyttäytyy omien yksinkertaisten sääntöjensä mukaisesti
-- Pikselit vaikuttavat toisiinsa niiden tyyppien perusteella
+- Jokainen pikseli käyttäytyy omien yksinkertaisten sääntöjensä mukaisesti (Tehty)
+- Pikselit vaikuttavat toisiinsa niiden tyyppien perusteella (Tehty)
 - Yksinkertainen ulkonäkö
 
 

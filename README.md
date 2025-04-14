@@ -2,13 +2,14 @@
 
 ## Hiekka/Hiukkassimulaattori peli
 
-[Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+Peli on fysiikkapohjainen hiekkalaatikko, jossa erilaiset pikselit/hiukkaset, kuten hiekka, vesi ja laava, ovat vuorovaikutuksessa toistensa kanssa painovoiman ja eri sääntöjensä perusteella.
 
-[Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+## Dokumentaatio
 
-[Changelog](dokumentaatio/changelog.md)
-
-[Arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
+- [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+- [Arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
+- [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+- [Changelog](dokumentaatio/changelog.md)
 
 ### Sovelluksen suorittaminen
 
@@ -27,4 +28,11 @@ poetry run invoke test
 ```bash
 poetry run invoke coverage-report
 ```
+
+### Pylint-tarkistus
+
+```bash
+poetry run pylint src
+```
+
 
