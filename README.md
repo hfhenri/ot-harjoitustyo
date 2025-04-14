@@ -25,6 +25,8 @@ Aloitus toimenpiteet:
 poetry run invoke build
 ```
 
+## Toiminnot
+
 ### Sovelluksen suorittaminen
 
 ```bash
