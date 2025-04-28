@@ -10,6 +10,7 @@ Peli on fysiikkapohjainen hiekkalaatikko, jossa erilaiset pikselit/hiukkaset, ku
 - [Arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
+- [Käyttöohje](dokumentaatio/kayttoohje.md)
 
 ## Asentaminen
 

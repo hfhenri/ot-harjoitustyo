@@ -1,12 +1,12 @@
-import time
-
 from pixels.liquid import liquid_flow_logic
 from pixels.steam import Steam
 from pixels.wood import Wood
 from pixels.water import Water
-
+from pixels.oil import Oil
+from pixels.fire import Fire
 class Lava:
     type_id = 4
+    liquid = True
     color = "red"
 
     def __init__(self, x, y):
@@ -37,11 +37,9 @@ class Lava:
             if isinstance(cell, Water):
                 simulation.remove_pixel(cell_x, cell_y)
                 simulation.add_pixel(Steam(cell_x, cell_y))
-            elif isinstance(cell, Wood):
-                if cell.contact_timer is None:
-                    cell.contact_timer = time.time()
-                    continue
-                if time.time() - cell.contact_timer > 1:
-                    simulation.remove_pixel(cell_x, cell_y)
+
+            elif isinstance(cell, (Wood, Oil)):
+                simulation.remove_pixel(cell_x, cell_y)
+                simulation.add_pixel(Fire(cell_x, cell_y))
 
         return liquid_flow_logic(simulation, self)

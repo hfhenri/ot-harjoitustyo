@@ -11,6 +11,9 @@
 | 12.4. | 3    | lisäsin laava ja höyry pikselin |
 | 13.4. | 2    | lisäsin testejä ja muutin käyttöliittymää |
 | 14.4. | 1    | lisäsin puu pikselin |
+| 23.4. | 3    | lisäsin öljy ja tuli pikselit |
+| 24.4. | 4    | muokkasin koodia jotta se sopisi laatuvaatimuksiin paremmin |
+| 25.4. | 4    | loin toiminnallisuuden tallentaa pelin |
+| 27.4. | 3    | laajensin dokumentaatiota |
 
-
-Tunnit kokonaisuudessaan: 17
+Tunnit kokonaisuudessaan: 30

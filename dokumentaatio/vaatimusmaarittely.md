@@ -16,9 +16,12 @@ Luonnos käyttöliittymästä:
 
 - Käyttajä pystyy lisäämän pikseleitä näytölle (Tehty)
 - Käyttäjä pystyy valitsemaan pikselin tyypin (Tehty)
+- Käyttäjä voi tallentaa pelin tilan tietokantaan (Tehty)
+- Käyttäjä voi poistaa pelejä tietokannasta (Tehty)
+- Käyttäjä voi säätää pelin asetuksia (Tehty)
 - Jokainen pikseli käyttäytyy omien yksinkertaisten sääntöjensä mukaisesti (Tehty)
 - Pikselit vaikuttavat toisiinsa niiden tyyppien perusteella (Tehty)
-- Yksinkertainen ulkonäkö
+- Yksinkertainen ulkonäkö (Tehty)
 
 
 

@@ -2,11 +2,13 @@ import unittest
 from pixels.stone import Stone
 from pixels.lava import Lava
 from pixels.water import Water
+from pixels.wood import Wood
 from pixels.steam import Steam
+from pixels.oil import Oil
 from simulation import Simulation
+from pixels.fire import Fire
 
-
-class TestSand(unittest.TestCase):
+class TestLava(unittest.TestCase):
     def setUp(self):
         self.simulation = Simulation(100, 80)
 
@@ -38,3 +40,33 @@ class TestSand(unittest.TestCase):
         self.simulation.simulate()
 
         self.assertTrue(isinstance(self.simulation.get_pixel(51, 78), Steam))
+
+    def test_lava_lights_oil(self):
+
+        self.simulation.add_pixel(Stone(49, 79))
+        self.simulation.add_pixel(Stone(52, 79))
+
+        lava = Lava(50, 79)
+        water = Oil(51, 79)
+
+        self.simulation.add_pixel(water)
+        self.simulation.add_pixel(lava)
+
+        self.simulation.simulate()
+
+        self.assertTrue(isinstance(self.simulation.get_pixel(51, 79), Fire))
+
+    def test_lava_lights_wood(self):
+
+        self.simulation.add_pixel(Stone(49, 79))
+        self.simulation.add_pixel(Stone(52, 79))
+
+        lava = Lava(50, 79)
+        water = Wood(51, 79)
+
+        self.simulation.add_pixel(water)
+        self.simulation.add_pixel(lava)
+
+        self.simulation.simulate()
+
+        self.assertTrue(isinstance(self.simulation.get_pixel(51, 79), Fire))

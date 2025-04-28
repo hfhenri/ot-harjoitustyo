@@ -1,8 +1,9 @@
 from pixels.liquid import liquid_flow_logic, liquid_float_on_water_logic
 
-class Steam:
-    type_id = 6
-    color = "white"
+class Oil:
+    type_id = 7
+    liquid = True
+    color = "#281E15"
 
     def __init__(self, x, y):
         self.updated = False
@@ -14,9 +15,9 @@ class Steam:
         self.y = y
 
     def step(self, simulation):
-        should_float = liquid_float_on_water_logic(simulation, self)
+        should_rise = liquid_float_on_water_logic(simulation, self)
 
-        if should_float:
+        if should_rise:
             return True
 
-        return liquid_flow_logic(simulation, self, up=True)
+        return liquid_flow_logic(simulation, self)

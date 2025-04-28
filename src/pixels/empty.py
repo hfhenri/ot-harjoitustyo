@@ -1,3 +1,4 @@
+
 class Empty:
     type_id = 0
     color = "black"
