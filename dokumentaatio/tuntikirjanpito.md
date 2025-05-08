@@ -19,4 +19,4 @@
 | 7.5. | 3     | lisäsin sähkölanka pikselin ja testejä |
 | 8.5. | 3     | viimeistelin projektin laajentamalla dokumentaatiota ja viimeistelemällä koodia |
 
-Tunnit kokonaisuudessaan: 38
+Tunnit kokonaisuudessaan: 39
