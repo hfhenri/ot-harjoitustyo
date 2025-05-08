@@ -13,6 +13,8 @@
     ├── water.py        # Vesi pikseli
     ├── lava.py         # Laava pikseli
     ├── oil.py          # Öljy pikseli
+    ├── wire.py         # Sähkölanka pikseli
+    ├── acid.py         # Happo pikseli
     ├── steam.py        # Öljy pikseli
     ├── fire.py         # Tuli pikseli
     ├── wood.py         # Puu pikseli
@@ -81,6 +83,12 @@ classDiagram
     class Lava {
       + step(sim)
     }
+    class Acid {
+      + step(sim)
+    }
+    class Wire {
+      + step(sim)
+    }
     class Oil {
       + step(sim)
     }
@@ -98,6 +106,7 @@ classDiagram
     }
     class Liquid
     Water --|> Liquid
+    Acid --|> Liquid
     Lava --|> Liquid
     Oil --|> Liquid
     Steam --|> Liquid

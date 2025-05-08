@@ -15,3 +15,12 @@
 - Lisättiin laava, höyry ja puu pikselit
 - Käyttäjä voi muuttaa simulaation nopeutta
 - Asetukset siirrettiin erilliseen osiossa käyttöliittymässä
+
+## Viikko 6
+
+- Lisättiin öljy ja tuli pikselit
+- Käyttäjä voi tallentaa ja poistaa pelin
+
+## Loppupalautus
+
+- Lisättiin sähkölanka ja happo pikselit

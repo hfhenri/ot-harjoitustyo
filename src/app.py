@@ -51,13 +51,16 @@ class App:
     def __do_requested_save(self):
         save_request = self.ui.save_request
         if save_request is not None:
-            self.database.save_game(save_request, self.simulation, self.ui.sim_delay)
-            self.ui.show_messagebox("Save Game", f"Game '{save_request}' saved successfully.")
+            self.database.save_game(
+                save_request, self.simulation, self.ui.sim_delay)
+            self.ui.show_messagebox(
+                "Save Game", f"Game '{save_request}' saved successfully.")
             self.ui.save_request = None
 
     """
     Loads the save the UI has requested.
     """
+
     def __do_requested_load(self):
         load_ui_request = self.ui.load_ui_request
         if load_ui_request:
@@ -77,10 +80,12 @@ class App:
     """
     Deletes the save the UI has requested.
     """
+
     def __do_requested_delete(self):
         if self.ui.delete_request is not None:
             self.database.delete_save(self.ui.delete_request)
-            self.ui.show_messagebox("Delete Save", f"Save ID {self.ui.delete_request} deleted.")
+            self.ui.show_messagebox(
+                "Delete Save", f"Save ID {self.ui.delete_request} deleted.")
             new_saves = self.database.list_saves()
             self.ui.init_load_ui(new_saves)
             self.ui.delete_request = None
@@ -88,6 +93,7 @@ class App:
     """
     Synchronises the canvas of the UI to match the simulation state.
     """
+
     def __update_ui_image(self):
         for pixel in self.simulation.movement_queue:
             self.ui.add_pixel_to_image(pixel)
@@ -106,6 +112,7 @@ class App:
     The main loop of the program.
     Does everything the UI has requested, and steps the simulation.
     """
+
     def loop(self):
         self.simulation.simulate()
         self.__add_requested_pixel()
@@ -116,7 +123,6 @@ class App:
         self.__do_requested_delete()
 
         self.__begin_loop()
-
 
 
 if __name__ == "__main__":

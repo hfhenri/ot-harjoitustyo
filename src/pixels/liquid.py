@@ -11,6 +11,7 @@ Returns:
     True, if the pixel has moved, False otherwise.
 """
 
+
 def liquid_flow_logic(simulation, pixel, up=False):
     direction = 1
 
@@ -35,6 +36,7 @@ def liquid_flow_logic(simulation, pixel, up=False):
 
     return False
 
+
 """
 Contains the logic on how liquid-like float on water.
 
@@ -45,6 +47,8 @@ Args:
 Returns:
     True, if the pixel has moved, False otherwise.
 """
+
+
 def liquid_float_on_water_logic(simulation, pixel):
 
     cell_above = simulation.can_move_return(pixel.x, pixel.y - 1)

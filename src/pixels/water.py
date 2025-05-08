@@ -2,7 +2,15 @@
 from pixels.liquid import liquid_flow_logic
 from pixels.fire import Fire
 from pixels.empty import Empty
+
+
 class Water:
+
+    """
+    The Water-class contains the logic for pixels behaving like water.
+    It behaves like a liquid and turns into steam in contact with Lava.
+    """
+
     type_id = 2
     color = "blue"
     liquid = True

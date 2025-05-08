@@ -6,8 +6,9 @@ from pixels.water import Water
 from pixels.lava import Lava
 from pixels.oil import Oil
 from pixels.fire import Fire
+from pixels.acid import Acid
+from pixels.wire import Wire
 from pixels.steam import Steam
-
 """Gets the pixel class object from the type id of the pixel.
 
 Args:
@@ -16,6 +17,8 @@ Args:
 Returns:
     The pixels class object.
 """
+
+
 def pixel_from_id(type_id):
     mapping = {
         Sand.type_id: Sand,
@@ -25,10 +28,15 @@ def pixel_from_id(type_id):
         Lava.type_id: Lava,
         Oil.type_id: Oil,
         Steam.type_id: Steam,
+        Acid.type_id: Acid,
+        Wire.type_id: Wire,
+        Fire.type_id: Fire,
         Empty.type_id: Empty
+
     }
     cls = mapping.get(type_id, Empty)
     return cls(0, 0)
+
 
 """
 Gets the pixel class object from the class name of the pixel.
@@ -39,6 +47,8 @@ Args:
 Returns:
     The pixels class object.
 """
+
+
 def pixel_from_name(name):
 
     pixel = Empty(0, 0)
@@ -59,5 +69,9 @@ def pixel_from_name(name):
             pixel = Stone(0, 0)
         case "Fire":
             pixel = Fire(0, 0)
+        case "Acid":
+            pixel = Acid(0, 0)
+        case "Wire":
+            pixel = Wire(0, 0)
 
     return pixel

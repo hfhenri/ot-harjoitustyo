@@ -1,5 +1,11 @@
 
 class Empty:
+
+    """
+    The Empty-class is the default pixel for an empty cell.
+    It doesn't interact with anything.
+    """
+
     type_id = 0
     color = "black"
 

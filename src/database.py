@@ -1,6 +1,7 @@
 import sqlite3
 import json
 
+
 class Database:
 
     """
@@ -10,6 +11,7 @@ class Database:
         db_file: Database file path
         conn: Connection to the database
         cursor: Executes SQL statements
+        DB_FILE: The default filename
     """
 
     DB_FILE = "saves.db"

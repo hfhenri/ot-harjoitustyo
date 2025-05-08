@@ -15,5 +15,8 @@
 | 24.4. | 4    | muokkasin koodia jotta se sopisi laatuvaatimuksiin paremmin |
 | 25.4. | 4    | loin toiminnallisuuden tallentaa pelin |
 | 27.4. | 3    | laajensin dokumentaatiota |
+| 5.5. | 2     | lisäsin happo pikselin |
+| 7.5. | 3     | lisäsin sähkölanka pikselin ja testejä |
+| 8.5. | 3     | viimeistelin projektin laajentamalla dokumentaatiota ja viimeistelemällä koodia |
 
-Tunnit kokonaisuudessaan: 30
+Tunnit kokonaisuudessaan: 38

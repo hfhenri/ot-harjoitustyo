@@ -4,19 +4,27 @@ from pixels.wood import Wood
 from pixels.water import Water
 from pixels.oil import Oil
 from pixels.fire import Fire
+
+
 class Lava:
+
+    """
+    The Lava-class contains the logic for pixels behaving like lava.
+    It behaves like a liquid and light Wood and Oil on fire.
+    """
+
     type_id = 4
     liquid = True
     color = "red"
 
     def __init__(self, x, y):
         self.updated = False
-        self.x = x
         self.y = y
+        self.x = x
 
     def move_self(self, x, y):
-        self.x = x
         self.y = y
+        self.x = x
 
     def step(self, simulation):
 

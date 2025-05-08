@@ -2,13 +2,19 @@ import random
 
 
 class Sand:
+
+    """
+    The Sand-class contains the logic for pixels behaving like sand.
+    It stacks like sand and doesn't interact with anything.
+    """
+
     type_id = 1
     color = "yellow"
 
     def __init__(self, x, y):
-        self.updated = False
         self.x = x
         self.y = y
+        self.updated = False
 
     def move_self(self, x, y):
         self.x = x

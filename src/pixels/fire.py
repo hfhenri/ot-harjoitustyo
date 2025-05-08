@@ -2,7 +2,12 @@ import random
 from pixels.wood import Wood
 from pixels.oil import Oil
 
+
 class Fire:
+    """
+    The Fire-class contains the logic for pixels behaving like fire.
+    It disappears after a few seconds and spreads in Wood and Oil.
+    """
     type_id = 8
     color = "orange"
 
@@ -16,8 +21,8 @@ class Fire:
         self.lifetime = 0
 
     def move_self(self, x, y):
-        self.x = x
         self.y = y
+        self.x = x
 
     def step(self, simulation):
         for dx, dy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:

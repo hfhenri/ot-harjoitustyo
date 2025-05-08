@@ -8,6 +8,7 @@ from pixels.oil import Oil
 from simulation import Simulation
 from pixels.fire import Fire
 
+
 class TestLava(unittest.TestCase):
     def setUp(self):
         self.simulation = Simulation(100, 80)

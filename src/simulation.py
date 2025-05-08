@@ -1,5 +1,7 @@
 from pixels.empty import Empty
 from pixels.shared import pixel_from_name
+
+
 class Simulation:
     """
     A collection of all the pixels on screen.
@@ -10,6 +12,7 @@ class Simulation:
         height: Height of the grid.
         movement_queue: A batch of pixels that have moved since the last cycle.
     """
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -82,6 +85,7 @@ class Simulation:
         pixel1: First pixel
         pixel2: Second pixel
     """
+
     def swap_places(self, pixel1, pixel2):
 
         self.grid[pixel1.x][pixel1.y] = pixel2
@@ -130,6 +134,7 @@ class Simulation:
         x: x position of the pixel
         y: y position of the pixel
     """
+
     def get_pixel(self, x, y):
         return self.grid[x][y]
 
